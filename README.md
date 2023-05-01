@@ -1,2 +1,2 @@
-# react-weather-app
-SheCodes React Week4
+# React Weather App
+This project was created during SheCodes React workshop
