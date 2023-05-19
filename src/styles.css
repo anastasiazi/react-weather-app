@@ -32,6 +32,19 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(128, 128, 128, 0.4);
+  opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(128, 128, 128, 0.4);
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(128, 128, 128, 0.4);
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 100px auto;
