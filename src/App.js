@@ -13,12 +13,15 @@ export default function App() {
     const [weather, setWeather] = useState({});
 
     function updateWeather(response) {
+        console.log(response.data.condition.icon_url)
         setWeather({
             city: response.data.city,
             temp: Math.floor(response.data.temperature.current),
             feelsLike: Math.floor(response.data.temperature.feels_like),
             humidity: response.data.temperature.humidity,
             wind: response.data.wind.speed,
+            icon: response.data.condition.icon_url,
+            icon_alt: response.data.condition.icon,
             date: new Date(response.data.time * 1000)
         });
     }

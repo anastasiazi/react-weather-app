@@ -34,8 +34,8 @@ export default function City(props) {
             <div className="col-6">
               <div className="d-flex align-items-center weather-temperature justify-content-around">
                 <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-                    alt="weather icon"
+                    src={props.weather.icon}
+                    alt={props.weather.icon_alt}
                     id="icon"
                 />
                 <div className="text-end w-100">
