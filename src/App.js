@@ -39,7 +39,13 @@ export default function App() {
 
         return (
             <div className="App">
+                <div className="weather-app-wrapper">
+                    <Search searchCity={handleCity}/>
+                    <Credits/>
+                </div>
             </div>
+
+
         )
     } else {
         return (
