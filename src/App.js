@@ -13,7 +13,6 @@ export default function App() {
     const [weather, setWeather] = useState({});
 
     function updateWeather(response) {
-        console.log(response.data.condition.icon_url)
         setWeather({
             city: response.data.city,
             temp: Math.floor(response.data.temperature.current),
