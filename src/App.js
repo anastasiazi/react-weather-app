@@ -18,7 +18,8 @@ export default function App() {
             temp: Math.floor(response.data.temperature.current),
             feelsLike: Math.floor(response.data.temperature.feels_like),
             humidity: response.data.temperature.humidity,
-            wind: response.data.wind.speed
+            wind: response.data.wind.speed,
+            date: new Date(response.data.time * 1000)
         });
     }
 

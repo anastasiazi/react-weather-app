@@ -1,6 +1,12 @@
 import React from "react";
 
 export default function City(props) {
+
+  const DAYS =['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const day = DAYS[(props.weather.date).getDay()];
+  const hour = (props.weather.date).getHours();
+  const minute = (props.weather.date).getMinutes() < 10 ? `0${(props.weather.date).getMinutes()}` : (props.weather.date).getMinutes();
+
     return (
         <div>
           <div className="row d-flex align-items-center">
@@ -9,7 +15,7 @@ export default function City(props) {
                 <h1 id="city">{props.weather.city}</h1>
                 <ul>
                   <li>
-                    Last updated at <span id="date">Monday 13:24</span>
+                    Last updated at <span id="date">{day} {hour}:{minute}</span>
                   </li>
                   <li id="description"></li>
                 </ul>
