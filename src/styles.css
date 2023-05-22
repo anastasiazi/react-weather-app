@@ -1,4 +1,5 @@
 .App {
+  margin: 10px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -49,7 +50,7 @@ li:first-letter {
 /* weather-app */
 .weather-app-wrapper {
   max-width: 600px;
-  margin: 100px auto;
+  margin: auto;
 }
 
 .weather-app-container {
@@ -161,8 +162,35 @@ li:first-letter {
   text-decoration: underline;
 }
 
+@media (max-width: 899px) {
+  .weather-app-container {
+    padding: 15px;
+  }
+
+  .weather-forecast {
+    margin-top: 0;
+  }
+
+  .weather-forecast-inner {
+    margin-top: 0;
+  }
+
+  .mb-3 {
+    margin-bottom: 10px!important;
+  }
+
+  .weather-temperature img {
+    width: 90px;
+    height: auto;
+  }
+}
+
 @media (max-width: 419px) {
   /* weather-app */
+
+  .mb-3 {
+    margin-bottom: 1rem!important;
+  }
   .weather-app-wrapper {
     width: auto;
     margin: 40px 15px;
