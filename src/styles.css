@@ -161,7 +161,7 @@ li:first-letter {
   text-decoration: underline;
 }
 
-@media (max-width: 399px) {
+@media (max-width: 419px) {
   /* weather-app */
   .weather-app-wrapper {
     width: auto;
