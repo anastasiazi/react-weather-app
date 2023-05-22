@@ -8,7 +8,7 @@ import axios from "axios";
 
 export default function App() {
 
-    const [city, setCity] = useState("Odesa");
+    const [city, setCity] = useState("Charlotte");
     const [ready, setReady] = useState(false)
     const [weather, setWeather] = useState({});
     const [forecast, setForecast] = useState({});
@@ -24,11 +24,11 @@ export default function App() {
             icon_alt: response.data.condition.icon,
             date: new Date(response.data.time * 1000)
         });
-    };
+    }
 
     function updateForecast(response) {
         setForecast(response.data.daily)
-    };
+    }
 
     function getForecast(city) {
         const apiKey = "4904e8e60b2d25ac4bf6450fbbt3bo36";
@@ -36,7 +36,7 @@ export default function App() {
 
         axios.get(apiUrl).then(updateForecast);
         setReady(true);
-    };
+    }
 
     function getWeather(city) {
         const apiKey = "4904e8e60b2d25ac4bf6450fbbt3bo36";
@@ -44,7 +44,7 @@ export default function App() {
 
         axios.get(apiUrl).then(updateWeather);
         getForecast(city);
-    };
+    }
 
     let handleCity = (city) => {
         setCity(city);
@@ -73,5 +73,4 @@ export default function App() {
             </div>
         );
     }
-    ;
 }

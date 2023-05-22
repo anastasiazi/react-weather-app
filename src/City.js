@@ -32,7 +32,6 @@ export default function City(props) {
                             <li>
                                 Last updated at <span id="date">{day} {hour}:{minute}</span>
                             </li>
-                            <li id="description"></li>
                         </ul>
                     </div>
                 </div>
