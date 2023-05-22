@@ -1,8 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 
 export default function Search(props) {
-    const [city, setCity] = useState();
-
     function handleSubmit(event) {
         let city = event.target.city.value;
         event.preventDefault();

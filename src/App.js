@@ -4,7 +4,7 @@ import Credits from "./Credits";
 
 import Search from "./Search";
 import "./styles.css";
-import axios, {get} from "axios";
+import axios from "axios";
 
 export default function App() {
 

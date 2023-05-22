@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
