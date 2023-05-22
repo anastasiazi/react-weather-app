@@ -8,7 +8,7 @@ export default function WeatherForecast(props) {
                 {props.forecast.map(function (dailyForecast, index) {
                     if (index < 6) {
                         return (
-                            <WeatherForecastDay key={index} forecastData={dailyForecast}/>
+                            <WeatherForecastDay key={index} forecastData={dailyForecast} units={props.units}/>
                         )
                     }
                 })}

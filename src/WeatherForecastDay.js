@@ -1,17 +1,17 @@
 import React from "react";
 
 export default function WeatherForecastDay(props) {
+    let maxTemp = Math.round(props.forecastData.temperature.maximum);
+    let minTemp = Math.round(props.forecastData.temperature.minimum);
 
-    function maxTemperature() {
-        let temperature = Math.round(props.forecastData.temperature.maximum);
-        return `${temperature}°`
+    function displayTemp(temperature) {
+        if (props.units === 'metric') {
+            return `${temperature}°`;
+        } else {
+            temperature = Math.round((temperature * 9 / 5 ) + 32);
+            return `${temperature}°`;
+        }
     }
-
-    function minTemperature() {
-        let temperature = Math.round(props.forecastData.temperature.minimum);
-        return `${temperature}°`
-    }
-
     function day() {
 
         const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -31,8 +31,8 @@ export default function WeatherForecastDay(props) {
                      id="icon"
                 />
                 <div className="weather-forecast-temp">
-                    <span className="weather-forecast-temp-max">{maxTemperature()}</span>
-                    <span className="weather-forecast-temp-min">{minTemperature()}</span>
+                    <span className="weather-forecast-temp-max">{displayTemp(maxTemp)}</span>
+                    <span className="weather-forecast-temp-min">{displayTemp(minTemp)}</span>
                 </div>
             </div>
         )

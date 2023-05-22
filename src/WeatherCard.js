@@ -1,13 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import City from "./City";
 import WeatherForecast from "./WeatherForecast"
 
 export default function WeatherCard(props) {
+    const [units, setUnits] = useState("metric")
+    function getUnits(units) {
+        setUnits(units);
+    }
+
     if (props.weather.city) {
         return (
             <div className="weather-app-container shadow-lg">
-                <City weather={props.weather}/>
-                <WeatherForecast forecast={props.forecast} />
+                <City weather={props.weather} updateUnits={getUnits}/>
+                <WeatherForecast forecast={props.forecast} units={units} />
             </div>
         );
     } else {
