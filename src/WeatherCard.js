@@ -6,8 +6,8 @@ export default function WeatherCard(props) {
     if (props.weather.city) {
         return (
             <div className="weather-app-container shadow-lg">
-                <City weather = {props.weather}/>
-                <WeatherForecast />
+                <City weather={props.weather}/>
+                <WeatherForecast forecast={props.forecast} />
             </div>
         );
     } else {

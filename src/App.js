@@ -8,9 +8,10 @@ import axios, {get} from "axios";
 
 export default function App() {
 
-    const [city, setCity] = useState();
+    const [city, setCity] = useState("Odesa");
     const [ready, setReady] = useState(false)
     const [weather, setWeather] = useState({});
+    const [forecast, setForecast] = useState({});
 
     function updateWeather(response) {
         setWeather({
@@ -25,11 +26,26 @@ export default function App() {
         });
     }
 
+    function updateForecast(response) {
+        setForecast(response.data.daily)
+    }
+
+    function getForecast(city) {
+        const apiKey = "4904e8e60b2d25ac4bf6450fbbt3bo36";
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+        axios.get(apiUrl).then(updateForecast);
+
+        setReady(true);
+
+    }
+
     function getWeather(city) {
         const apiKey = "4904e8e60b2d25ac4bf6450fbbt3bo36";
         let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
         axios.get(apiUrl).then(updateWeather);
-        setReady(true);
+
+        getForecast(city);
     }
 
     let handleCity = (city) => {
@@ -38,7 +54,7 @@ export default function App() {
     };
 
     if (!ready) {
-        getWeather("Odesa");
+        getWeather(city);
 
         return (
             <div className="App">
@@ -55,7 +71,7 @@ export default function App() {
             <div className="App">
                 <div className="weather-app-wrapper">
                     <Search searchCity={handleCity}/>
-                    <WeatherCard weather={weather}/>
+                    <WeatherCard weather={weather} forecast={forecast}/>
                     <Credits/>
                 </div>
             </div>

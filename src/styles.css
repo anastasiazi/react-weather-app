@@ -110,16 +110,12 @@ li:first-letter {
 
 .weather-forecast {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #808080;
 }
 
 .weather-forecast-day {
   font-size: 16px;
-}
-
-.weather-forecast-temperatures {
-  font-size: 13px;
 }
 
 .weather-forecast-temperature-max {
@@ -144,6 +140,7 @@ li:first-letter {
 }
 
 .weather-forecast-inner {
+  margin-top: 20px;
   padding: 5px;
 }
 
@@ -156,4 +153,11 @@ li:first-letter {
 .weather-forecast-temp {
   display: flex;
   gap: 10px;
+  font-size: 14px;
 }
+
+.weather-forecast-temp-min {
+  opacity: .7;
+}
+
+
