@@ -164,7 +164,7 @@ li:first-letter {
 @media (max-width: 399px) {
   /* weather-app */
   .weather-app-wrapper {
-    max-width: auto;
+    width: auto;
     margin: 40px 15px;
   }
 
