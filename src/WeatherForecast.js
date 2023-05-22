@@ -16,5 +16,5 @@ export default function WeatherForecast(props) {
         );
     } else {
         return <p>Loading...</p>
-    }
+    };
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import WeatherCard from "./WeatherCard";
 import Credits from "./Credits";
 
@@ -24,29 +24,27 @@ export default function App() {
             icon_alt: response.data.condition.icon,
             date: new Date(response.data.time * 1000)
         });
-    }
+    };
 
     function updateForecast(response) {
         setForecast(response.data.daily)
-    }
+    };
 
     function getForecast(city) {
         const apiKey = "4904e8e60b2d25ac4bf6450fbbt3bo36";
         let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 
         axios.get(apiUrl).then(updateForecast);
-
         setReady(true);
-
-    }
+    };
 
     function getWeather(city) {
         const apiKey = "4904e8e60b2d25ac4bf6450fbbt3bo36";
         let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(updateWeather);
 
+        axios.get(apiUrl).then(updateWeather);
         getForecast(city);
-    }
+    };
 
     let handleCity = (city) => {
         setCity(city);
@@ -63,8 +61,6 @@ export default function App() {
                     <Credits/>
                 </div>
             </div>
-
-
         )
     } else {
         return (
@@ -77,4 +73,5 @@ export default function App() {
             </div>
         );
     }
+    ;
 }

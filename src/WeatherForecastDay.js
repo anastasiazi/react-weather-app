@@ -8,10 +8,12 @@ export default function WeatherForecastDay(props) {
         if (props.units === 'metric') {
             return `${temperature}°`;
         } else {
-            temperature = Math.round((temperature * 9 / 5 ) + 32);
+            temperature = Math.round((temperature * 9 / 5) + 32);
             return `${temperature}°`;
         }
-    }
+        ;
+    };
+
     function day() {
 
         const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -19,7 +21,7 @@ export default function WeatherForecastDay(props) {
         let day = date.getDay();
 
         return DAYS[day];
-    }
+    };
 
     if (props.forecastData) {
         return (
@@ -37,5 +39,5 @@ export default function WeatherForecastDay(props) {
             </div>
         )
     }
-
+    ;
 }
